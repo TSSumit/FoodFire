@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading1= (<h1 className="heading" >this is the heading in react</h1>);
+const heading1= <h1 className="heading" >this is the heading in react</h1>;
 const list=(
     <ul id="list">
         <li>this is content 1</li>
@@ -14,12 +14,12 @@ const footer=<div id="footerBlock"> this is the footer of the scite</div>
 const List=()=>{
     return list;
 }
-const Heading1= ()=> heading1;
+const Heading1=()=> heading1;
 const Paragraph=()=>{
     return <p> this is the paragraph which contains the data and information</p>;
 }
 
-const Block=()=>(
+const block=()=>(
     <div className="block">
         <Heading1/>
         <Paragraph/>
@@ -28,7 +28,5 @@ const Block=()=>(
 );
 
 const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Block />);
-// root.render(<List />);
-
-console.log("this is app.js");
+root.render(<block />);
+root.render(<List />);
