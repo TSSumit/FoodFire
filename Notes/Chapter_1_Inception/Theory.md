@@ -21,7 +21,7 @@ Eg:
 
 ## Q: What is `CDN`? Why do we use it?
 
-* A `content delivery network (CDN)` refers to a geographically distributed group of servers that work together to provide fast delivery of Internet content.
+* A `content delivery network (CDN)` is a group of servers that work together to provide fast delivery of Internet content.
 * The main use of a CDN is to deliver content through a network of servers in a secure and efficient way.
 
 ## Q: Why is `React known as React`?
