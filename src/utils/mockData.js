@@ -1,59 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
 
-/*
-Header
-    -logo
-    -Nav Items
-Body
-    -Search tab
-    -RestaurantContainser
-        -RestaurantCard
-Footer
-    -CopyWrite
-    -Linka
-    -Address
-    -Contact
-*/
-const HeaderItem=()=>{
-    return (
-        <div className="header">
-            <div className="logo-Container">
-                <img
-                    className="logo"
-                    src="https://th.bing.com/th/id/OIP.cGaeftSTS46U_yRowW4iJQAAAA?w=262&h=184&c=7&r=0&o=5&dpr=1.5&pid=1.7"
-                />
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About US</li>
-                    <li>Contact US</li>
-                    <li>Card</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-const RestaurantCard= (props)=>{
-    return (
-    <div className="restorent-card">
-        <img className="card-img" src={props.imagelinek}/>
-        <p className="restorent-tital">{props.hotelName}</p>
-        <div className="rating-time">
-            <div className="customer-rating">
-                <img className="star-img" src="https://webstockreview.net/images/star-icon-png-2.png"/>
-                {props.rating}
-            </div>
-            <div className="time-to-reach">{props.time}</div>
-        </div>
-        <div className="hotel-address">
-            <div className="hotel-address-area">{props.area}</div>
-            <div className="hotel-address-city">{props.address}</div>
-        </div>
-    </div>
-    )
-}
+
 
 const restaurantList = [
     {
@@ -1871,66 +1817,6 @@ const restaurantList = [
       },
       subtype: "basic",
     },
-  ];
+];
 
-const Body=()=>{
-    return (
-        <div className="body">
-            <div className="search-container">
-                <input type="text" className="search-input" placeholder="Search..." id="search-bar"/>
-                <button className="search-button" onclick="performSearch()">Search</button>
-            </div>
-            <div className="restaurant-containser">
-                {restaurantList.map((restaurant) => {
-                    const { name, avgRating, slaString, cuisines,locality, cloudinaryImageId } = restaurant.data;
-                    const rating = avgRating + " Stars";
-                    const src = `https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${cloudinaryImageId}`;
-
-                    return (
-                        <RestaurantCard
-                            key={restaurant.data.id}
-                            hotelName={name}
-                            rating={rating}
-                            time={slaString}
-                            area={cuisines.join(", ")}
-                            address={locality}
-                            imagelinek={src}
-                        />
-                    );
-                })}
-
-                
-                {/* <RestaurantCard hotelName="Andra Gunpowder" rating="4.3" time="12 min" area="Burger america" address="Sanjay Nagar" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/r3ybrbwebno0gth3cgus"/>
-                <RestaurantCard hotelName="KFC" rating="4.3" time="25 min" area="barkely desert" address="MarathaHalli" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f01666ac73626461d7455d9c24005cd4"/>
-                <RestaurantCard hotelName="McDonald's" rating="3.8" time="14 min" area="Bangali biryani" address="Whitefiesl" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/cd832b6167eb9f88aeb1ccdebf38d942"/>
-                <RestaurantCard hotelName="phulke ghar ka" rating="4.5" time="32 min" area="sween snacks" address="MarathaHalli" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/yfyo8aklppbwdplv7ofp"/>
-                <RestaurantCard hotelName="Asha tifin" rating="4.1" time="23 min" area="Bangali chainese" address="Mahadevpur" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/405645b3118d83e89db4c65361e43733"/>
-                <RestaurantCard hotelName="Mani's dum biryani" rating="4.0" time="34 min" area="marathi misal" address="Broughtfill" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/um3dvxiaqru2q1iynexk"/>
-                <RestaurantCard hotelName="Nandana place" rating="3.7" time="43 min" area="pizza italian" address="Sanjay nager" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/r08nbmwgi1pmj01hr9yh"/>
-                <RestaurantCard hotelName="Tuffle" rating="4.5" time="13 min" area="Barkery" address="Bellendur" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/0adee855c65fa947a256764a87a55658"/>
-                <RestaurantCard hotelName="wikingo" rating="4.2" time="23 min" area="maxian salad" address=""kabudisanahil imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f5xayoro0vcaj3k5c7ze"/>
-                <RestaurantCard hotelName="phulke ghar ka" rating="4.5" time="32 min" area="sween snacks" address="MarathaHalli" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/p9b6me3vhnrf8pn6q8yz"/>
-                <RestaurantCard hotelName="Asha tifin" rating="4.1" time="23 min" area="Bangali chainese" address="Mahadevpur" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/d96267738c19ec62acb5390e52faba41"/> */}
-            </div>
-        </div>
-    )
-}
-// const Footer=(){
-//     return(
-//         <div className="footer">
-
-//         </div>
-//     )
-// }
-const AppLayout= ()=>{
-    return (
-        <div className="app">
-            <HeaderItem/>
-            <Body/>
-        </div>
-    )
-}
-const root=ReactDOM.createRoot(document.getElementById("root"));
-// console.log(<)
-root.render(<AppLayout/>);
-
+export default restaurantList;
