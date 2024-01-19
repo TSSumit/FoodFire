@@ -1900,7 +1900,7 @@ const Body=()=>{
                 })}
 
                 
-                {/* <RestaurantCard hotelName="Andra Gunpowder" rating="4.3" time="12 min" area="Burger america" address="Sanjay Nagar" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/r3ybrbwebno0gth3cgus"/>
+                <RestaurantCard hotelName="Andra Gunpowder" rating="4.3" time="12 min" area="Burger america" address="Sanjay Nagar" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/r3ybrbwebno0gth3cgus"/>
                 <RestaurantCard hotelName="KFC" rating="4.3" time="25 min" area="barkely desert" address="MarathaHalli" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f01666ac73626461d7455d9c24005cd4"/>
                 <RestaurantCard hotelName="McDonald's" rating="3.8" time="14 min" area="Bangali biryani" address="Whitefiesl" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/cd832b6167eb9f88aeb1ccdebf38d942"/>
                 <RestaurantCard hotelName="phulke ghar ka" rating="4.5" time="32 min" area="sween snacks" address="MarathaHalli" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/yfyo8aklppbwdplv7ofp"/>
@@ -1910,7 +1910,7 @@ const Body=()=>{
                 <RestaurantCard hotelName="Tuffle" rating="4.5" time="13 min" area="Barkery" address="Bellendur" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/0adee855c65fa947a256764a87a55658"/>
                 <RestaurantCard hotelName="wikingo" rating="4.2" time="23 min" area="maxian salad" address=""kabudisanahil imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f5xayoro0vcaj3k5c7ze"/>
                 <RestaurantCard hotelName="phulke ghar ka" rating="4.5" time="32 min" area="sween snacks" address="MarathaHalli" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/p9b6me3vhnrf8pn6q8yz"/>
-                <RestaurantCard hotelName="Asha tifin" rating="4.1" time="23 min" area="Bangali chainese" address="Mahadevpur" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/d96267738c19ec62acb5390e52faba41"/> */}
+                <RestaurantCard hotelName="Asha tifin" rating="4.1" time="23 min" area="Bangali chainese" address="Mahadevpur" imagelinek="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/d96267738c19ec62acb5390e52faba41"/>
             </div>
         </div>
     )
