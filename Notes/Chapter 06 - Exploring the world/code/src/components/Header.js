@@ -1,10 +1,8 @@
 import {LOGO_URL} from "../utils/constants";
 import { useState } from "react";
 import UserAuthentication from "./AuthenticateUser";
-import SortingComponent from "./SortingComponent";
 const Header=()=>{
     const [isLoggedIn,setIsLoggedIn]=useState(true);
-    
     return (
         <div className="header">
             <div className="logo-Container">

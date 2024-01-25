@@ -25,7 +25,6 @@ const Body=()=>{
         try{
             const data=await fetch(swiggy_api_URL);
             const jsonData=await data.json();
-            console.log(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
             setallRestaurants(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
             setfilteredRestaurants(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         }
@@ -40,61 +39,12 @@ const Body=()=>{
         // return (
             <div className="body">
                 <div className="filter_and_search">
-                    <div className="filter">
-                        <button 
-                            className="filter_btn filter_btn"
-                            onClick={()=>{
-                                const filteredList=allRestaurants.filter((res)=> res.info.avgRating>4.2 );
-                                setfilteredRestaurants(filteredList);
-                            }}
-                        >Rating 4.2+</button>
-                        <button 
-                            className="pure_veg_btn filter_btn"
-                            onClick={() => {
-                                const filteredList = allRestaurants.filter((res) => res.info.cuisines.includes('Vegetarian'));
-                                setfilteredRestaurants(filteredList);
-                            }}
-                        >Pure Veg</button>
-
-                        <button 
-                            className="fast_delivery_btn filter_btn"
-                            onClick={() => {
-                                const sortedList = allRestaurants.slice().sort((a, b) => {
-                                    return a.info.sla.deliveryTime - b.info.sla.deliveryTime;
-                                });
-                                setfilteredRestaurants(sortedList);
-                            }}
-                        >Fast Delivery</button>
-
-                        <button 
-                            className="300_600_btn filter_btn"
-                            onClick={() => {
-                                const filteredList = allRestaurants.filter((res) => {
-                                    const costForTwo = parseInt(res.info.costForTwo.replace(/\D/g, ''), 10);
-                                    return costForTwo >= 300 && costForTwo <= 500;
-                                });
-                                setfilteredRestaurants(filteredList);
-                            }}
-                        >Rs.300-Rs.500</button>
-
-                        <button 
-                            className="less_than_300 filter_btn"
-                            onClick={() => {
-                                const filteredList = allRestaurants.filter((res) => {
-                                    const costForTwo = parseInt(res.info.costForTwo.replace(/\D/g, ''), 10);
-                                    return costForTwo < 300;
-                                });
-                                setfilteredRestaurants(filteredList);
-                            }}
-                        >Less than Rs.300</button>
-                    </div>
-
                     <div className="search-container">
                         <input 
                             type="text" 
                             className="search-input" 
                             id="search-bar" 
-                            placeholder="Search a restaurent you want..."  
+                            placeholder="Search"  
                             value={searchText} 
                             onChange={(e)=>{
                                 setSearchText(e?.target?.value);
@@ -102,7 +52,6 @@ const Body=()=>{
                                 // setfilteredRestaurants(data);
                             }} 
                         />
-
                         <button 
                             className="search-button" 
                             onClick={()=>{
@@ -118,6 +67,15 @@ const Body=()=>{
                             }}
                         >Search</button>
                     </div>
+                    <div className="filter">
+                        <button 
+                            className="filter_btn"
+                            onClick={()=>{
+                                const filteredList=allRestaurants.filter((res)=> res.info.avgRating>4.2 );
+                                setfilteredRestaurants(filteredList);
+                            }}
+                        > Top Rated Restaurants </button>
+                    </div>
                 </div>
                 <div className="restaurant-containser">
                 {filteredRestaurants?.length === 0 && allRestaurants?.length !== 0 ? (
@@ -125,7 +83,7 @@ const Body=()=>{
                     ) : (
                         filteredRestaurants.map((restaurant) => {
                             const { name, avgRating, cuisines, locality, cloudinaryImageId } = restaurant.info;
-                            const rating = avgRating + "  •  ";
+                            const rating = avgRating + " Stars";
                             const src = CDN_URL + cloudinaryImageId;
                             return (
                                 <RestaurantCard

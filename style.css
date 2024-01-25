@@ -1,86 +1,197 @@
-.header{
-    display: flex;
-    justify-content: space-between;
-    border: 2px solid black;
-    padding: 0 12px 0 12px;
-    margin: 5px;
+body {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
-.logo{
-    width: 80px;
+#root{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+.header{
+  box-shadow: 0 15px 35px -20px rgba(40,44,63,.15);
+  background-color: #ffffff;
+  width: 100vw;
+  height: 14vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-end-end-radius: 4px;
+  padding: 0px 12px;
+  margin-bottom: 3vh;
+}
+.logo-Container {
+  margin-left: 3vw;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  border-radius: 300px;
+  width: 45px;
+  background-color: #fff;
+  transition: all 200ms ease-in-out; 
+}
+
+.logo:hover {
+  width: 55px; 
+}
+
+.nav-items{
+  display: flex;
+  align-items: center;
+  margin-right: 5vw;
 }
 .nav-items > ul{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-.nav-items > ul > li{
-    list-style-type: none;
-    padding-right: 12px;
+.nav-item{
+  background-color: #fff;
+  font-size: 0.95rem;
+  font-weight: 530;
+  border: none;
+  border-radius: 3px ;
+  padding: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-left: 12px;
+  margin-right: 12px;
+  /* background-color: rgb(194, 199, 203); */
 }
+.nav-item:hover{
+  color: #fc8019!important;
+  cursor: default;
+}
+
+.body{
+  background: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+}
+
 .filter_and_search{
   display: flex;
   justify-content: space-between;
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
 .search-container{
   display: flex;
   /* justify-content: end; */
-  margin-left: 15px;
-  padding: 2px;
-}
-.search-input{
   margin-right: 5px;
   padding: 2px;
 }
-.filter{
-  margin: 5px;
+.search-input{
+  padding-left: 5px;
+  width: 20vw;
+  box-sizing: border-box;
+  color: #000;
+  background: rgb(255, 255, 255);
+  border: 1px solid #aabcca;
+  border-right: 0;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  outline: none;
+  padding: 10px 15px 10px 20px;
+  box-shadow: 1px 2px 4px rgba(0,0,0,.08);
 }
-.filter_btn{
-  padding: 2px;
+.search-button{
+  color: #fff;
+  cursor: pointer;
+  background-color: #0768b3;
+  border: none;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  outline: none;
+  margin-left: -4px;
+  padding: 10px 22px;
+  box-shadow: 1px 2px 4px rgba(0,0,0,.08);
 }
+.filter_btn {
+  border-radius: 18px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(226, 226, 231);
+  padding: 9px 12px;
+  display: inline-grid;
+  width: max-content;
+  grid-auto-flow: column;
+  gap: 8px;
+  box-shadow: rgba(2, 6, 12, 0.04) 0px 2px 12px;
+  transition: all 100ms ease-in 0s;
+  margin: 0.3vw;
+}
+
+.filter_btn:hover {
+  background-color: rgb(245, 245, 245);
+  border-color: rgb(200, 200, 200);
+  box-shadow: rgba(2, 6, 12, 0.1) 0px 4px 16px;
+}
+
 .card-img{
-    width: 100%;
-    height: 110px;
-    
+  width: 100%;
+  height: 110px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .restorent-card{
-    font-size: 0.80rem;
-    font-family: 'Times New Roman';
-    width: 185px;
-    /* height: 230px; */
-    /* border: 2px solid blue; */
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin: 15px;
+  box-shadow: -1px 5px 10px 3px rgba(42,42,42,.2);
+  padding: 8px;
+  font-size: 0.80rem;
+  font-family: 'Times New Roman';
+  width: 185px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin: 15px;
+}
+.restorent-card:hover{
+  transform: scale(0.95, 0.95);
+  transform-origin: center center;
+  transition: all 0.1s ease-in 0s;
 }
 .restorent-tital{
-    font-size: 1rem;
-    margin: 0;
-    padding: 2px;
+  font-size: 1rem;
+  margin: 0;
+  padding: 2px;
+  font-weight: 550;
 }
 .rating-time{
-    display: flex;
-    flex-direction: row;
-    padding: 2px;
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+  font-size: 0.95rem;
+  font-weight: 550;
 }
 .star-img{
-    width: 0.80rem;
-    margin-left:5px;
+  width: 0.64rem;
+  margin-left:2px;
 }
 .customer-rating{
-    padding: 2px;
+  padding: 2px;
 }
 .time-to-reach{
-    margin-left: 15px;
+    /* margin-left: 15px; */
     padding: 2px;
 }
 .restaurant-containser{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 2px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2px;
 }
+.restorent-card{
+  color: rgba(2, 6, 12, 0.75);
+}
+
 .hotel-address-area{
     font-size: 0.9rem;
     padding: 2px;
@@ -89,7 +200,49 @@
     padding: 2px;
 }
 
+.restorent-card-skeleton{
+  /* height:200px; */
+  width: 185px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 15px;
+  /* border: 2px solid black; */
+}
+.skeleton{
+  margin-bottom: 8px;
+  border-radius: 4px;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
 
+.halfLen{
+  height: 1rem;
+  width: 100%;
+}
+.fullLen{
+  height: 1rem;
+  width: 70%;
+}
+
+.search-and-filter-skeleton-box{
+  width: 15vw;
+  height: 2rem;
+  margin: 5px;
+  
+  /* border: 2px solid black; */
+}
+.search-and-filter-skeleton{
+  display: flex;
+  justify-content: space-between;
+}
+@keyframes skeleton-loading{
+  0%{
+    background-color: hsl(200, 20%, 95%);
+  }
+  100%{
+    background-color: hsl(200, 20%, 75%);
+  }
+}
 
 
 
@@ -98,7 +251,6 @@
 {
       type: "restaurant",
       data: {
-        type: "F",
         id: "74453",
         name: "Domino's Pizza",
         uuid: "87727dbd-7f2b-4857-9763-359624165845",
@@ -107,14 +259,12 @@
         totalRatingsString: "1000+ ratings",
         cloudinaryImageId: "bz9zkh2aqywjhpankb07",
         cuisines: ["Pizzas"],
-        tags: [],
         costForTwo: 40000,
         costForTwoString: "₹400 FOR TWO",
         deliveryTime: 45,
         minDeliveryTime: 45,
         maxDeliveryTime: 45,
         slaString: "45 MINS",
-        lastMileTravel: 0,
         slugs: {
           restaurant: "dominos-pizza-majura-nondh-test_surat",
           city: "surat",
@@ -123,97 +273,9 @@
         address:
           "Shop 32 To 35, Sheetal Shopping Square,Near Lb Turning Point, Bhatar Road,MAJURA NONDH, Surat,GUJARAT-395001",
         locality: "Bhatar Road",
-        parentId: 2456,
-        unserviceable: false,
-        veg: true,
-        select: false,
-        favorite: false,
-        tradeCampaignHeaders: [],
-        aggregatedDiscountInfo: {
-          header: "FREE DELIVERY",
-          shortDescriptionList: [
-            {
-              meta: "FREE DELIVERY",
-              discountType: "FREE_DELIVERY",
-              operationType: "RESTAURANT",
-            },
-          ],
-          descriptionList: [
-            {
-              meta: "FREE DELIVERY",
-              discountType: "FREE_DELIVERY",
-              operationType: "RESTAURANT",
-            },
-          ],
-          subHeader: "",
-          headerType: 0,
-          superFreedel: "",
-        },
-        aggregatedDiscountInfoV2: {
-          header: "",
-          shortDescriptionList: [
-            {
-              meta: "Free Delivery",
-              discountType: "FREE_DELIVERY",
-              operationType: "RESTAURANT",
-            },
-          ],
-          descriptionList: [
-            {
-              meta: "FREE DELIVERY",
-              discountType: "FREE_DELIVERY",
-              operationType: "RESTAURANT",
-            },
-          ],
-          subHeader: "",
-          headerType: 0,
-          superFreedel: "",
-        },
-        chain: [],
-        feeDetails: {
-          fees: [],
-          totalFees: 0,
-          message: "",
-          title: "",
-          amount: "",
-          icon: "",
-        },
-        availability: {
-          opened: true,
-          nextOpenMessage: "",
-          nextCloseMessage: "",
-        },
-        longDistanceEnabled: 0,
-        rainMode: "NONE",
-        thirdPartyAddress: false,
-        thirdPartyVendor: "",
-        adTrackingID: "",
-        badges: {
-          imageBased: [],
-          textBased: [],
-          textExtendedBadges: [],
-        },
-        lastMileTravelString: "2.1 kms",
-        hasSurge: false,
-        sla: {
-          restaurantId: "74453",
-          deliveryTime: 45,
-          minDeliveryTime: 45,
-          maxDeliveryTime: 45,
-          lastMileTravel: 0,
-          lastMileDistance: 0,
-          serviceability: "SERVICEABLE",
-          rainMode: "NONE",
-          longDistance: "NOT_LONG_DISTANCE",
-          preferentialService: false,
-          iconType: "EMPTY",
-        },
-        promoted: false,
-        avgRating: "4.0",
-        totalRatings: 1000,
-        new: false,
-      },
-      subtype: "basic",
+        parentId: 2456
     },
 
 */
+
+
