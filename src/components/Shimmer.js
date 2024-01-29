@@ -9,8 +9,13 @@ const Shimmer=()=>{
     return (
         <div className="body">
             <div className="search-and-filter-skeleton">
-                <div className="skeleton search-and-filter-skeleton-box"></div>
-                <div className="skeleton search-and-filter-skeleton-box"></div>
+                <div className="filter_skeleton_box">
+                    <div className="skeleton filter_skeleton"></div>
+                    <div className="skeleton filter_skeleton"></div>
+                    <div className="skeleton filter_skeleton"></div>
+                    <div className="skeleton filter_skeleton"></div>
+                </div>
+                <div className="skeleton search-skeleton-box"></div>
             </div>
             <div className="restaurant-containser">
                 {
