@@ -1,0 +1,69 @@
+/* RestaurantMenuCard.css */
+
+.restaurant-menu-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menu-item-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon-container {
+    margin-right: 10px;
+  }
+  
+  .veg-icon {
+    color: green;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .non-veg-icon {
+    color: red;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .item-details {
+    flex-grow: 1;
+  }
+  
+  .item-name {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .item-price {
+    margin: 0;
+    color: #555;
+  }
+  
+  .menu-item-actions {
+    margin-top: 10px;
+  }
+  
+  .add-to-cart-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .availability-message {
+    color: #ff0000;
+  }
+  
+  .menu-item-image img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  

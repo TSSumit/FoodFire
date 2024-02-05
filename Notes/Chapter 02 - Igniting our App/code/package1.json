@@ -1,0 +1,27 @@
+{
+  "name": "reactnotes",
+  "version": "1.0.0",
+  "description": "This is namaste react",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/TSSumit/reactNotes)"
+  },
+  "keywords": [
+    "react",
+    "namaste-react"
+  ],
+  "author": "Sumit Tikone",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
