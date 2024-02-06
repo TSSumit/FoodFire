@@ -16,6 +16,7 @@ const RestaurantMenues = () => {
   const parameters = useParams();
   const { resId } = parameters;
   const [restaurants, setRestaurants] = useState(null);
+  const [menuHeaderData, setMenuHeaderData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,8 +29,9 @@ const RestaurantMenues = () => {
         menue_api_URL+resId
       );
       const data = await response.json();
-      console.log(data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR);
-      setRestaurants(data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[7]?.card?.card?.itemCards[1]?.card?.info);
+      console.log(data);
+      setRestaurants(data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[3]?.card?.info);
+      setMenuHeaderData(data?.data?.cards[0]?.card?.card?.info);
     // } catch (error) {
     //   console.error("Error fetching data:", error);
     // } finally {
@@ -41,17 +43,16 @@ const RestaurantMenues = () => {
     return <Shimmer />;
   }
 
-  if (!restaurants) {
+  if (!restaurants || !menuHeaderData) {
     return <div>Error loading restaurant data</div>;
   }
 
   return (
-    <div>
-      <h1>Restaurant Id: {resId} </h1>
-      <h2>This is the restaurant menu page</h2>
-      <h3>{restaurants?.name}</h3>
-      {console.log(restaurants)}
-      <RestaurantMenueCard menueItem={restaurants} />
+    <div id="restaurant_menue_body">
+      <div id="restaurant_menues">
+        <MenuTopHeader menueItem={menuHeaderData} />
+        <RestaurantMenueCard menueItem={restaurants} />
+      </div>
     </div>
   );
 };

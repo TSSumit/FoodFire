@@ -1,69 +1,272 @@
-/* RestaurantMenuCard.css */
+#restaurant_menue_body{
+  width: 100vw;
+  min-height: 67vh;
+  display: flex;
+  justify-content: center;
+}
+#outer_box{
+  margin-left:2vw;
+  margin-right:2vw;
+}
+#restaurant_menues{
+  width: 800px;
+  font-style: normal;
+  padding-bottom: 14px;
+}
+#menu-card{
+  font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+}
+#veg_bestseller{
+  height: 17px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
 
-.restaurant-menu-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .menu-item-info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .icon-container {
-    margin-right: 10px;
-  }
-  
-  .veg-icon {
-    color: green;
-    font-weight: bold;
-    margin-right: 5px;
-  }
-  
-  .non-veg-icon {
-    color: red;
-    font-weight: bold;
-    margin-right: 5px;
-  }
-  
-  .item-details {
-    flex-grow: 1;
-  }
-  
-  .item-name {
-    margin: 0;
-    font-size: 18px;
-  }
-  
-  .item-price {
-    margin: 0;
-    color: #555;
-  }
-  
-  .menu-item-actions {
-    margin-top: 10px;
-  }
-  
-  .add-to-cart-button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .availability-message {
-    color: #ff0000;
-  }
-  
-  .menu-item-image img {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 10px;
-  }
-  
+#veg_nonveg_icon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-container {
+  height: 14px;
+  width: 14px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 70%;
+  height: 70%;
+  fill: white;
+}
+
+#veg_icon{
+  border:2px solid #0f8a65;
+}
+#veg_icon .icon {
+  background-color: #0f8a65;
+  border-radius: 50%;
+}
+
+#non_veg_icon{
+  border: 2px solid #e43b4f;
+} 
+#non_veg_icon .icon {
+  background-color: #e43b4f; 
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.bestseller-container {
+  display: flex;
+  align-items: center;
+  margin-left:7px;
+}
+
+.star-icon {
+  height: 14px;
+  width: 14px;
+  background-color: #ee9c00;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  margin-right: 2px;
+}
+
+.bestseller-text{
+  color: #ee9c00;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#menue_title{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#menue_price {
+  display: flex;
+  flex-direction: row;
+}
+#rupees_symbol{
+  font-size: .9rem;
+  font-weight: 550;
+  margin-right: 3px;
+}
+
+#offer_price {
+  display: flex;
+  align-items: center;
+}
+
+#defoult_price {
+  font-size: 0.7rem;
+  text-decoration: line-through;
+  margin-right: 5px; 
+}
+
+#normal_price, #final_price {
+  font-size: 1rem;
+  font-weight: 550;
+  color: #3e4152;
+}
+
+#menue_description{
+  letter-spacing: -.3px;
+  font-size: .9rem;
+  color: rgba(40,44,63,.45);
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+
+
+#menu_card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 2px solid red;  */
+  padding: 10px;
+}
+
+#description_box{
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  height: auto;
+  max-width: 480px;
+  /* border: 2px solid blue;  */
+  padding: 10px; 
+}
+
+
+#image_and_availability {
+  position: relative;
+  margin-left: 16px;
+  min-width: 118px;
+  height: 120px;
+  border:  0px solid green;    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#menue_img {
+  position: absolute;
+  top:  0;
+  left:  0;
+  width:  118px;
+  height:  96px;
+  border-radius: 6px;
+}
+
+.menue-button {
+  position: relative; /* Change to relative for shadow effect */
+  bottom: -30;
+  left: 35%;
+  transform: translate(-50%, 0);
+  min-width: 5rem;
+  min-height: 2.2rem;
+  display: inline-block;
+  margin: 0;
+  border-radius: 4px;
+  border: 0.5px solid #46734559;
+  color: #777777e9;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 15px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1); /* Modern box-shadow effect */
+  transition: box-shadow 0.3s ease; /* Smooth transition for the shadow effect */
+}
+
+.menue-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.style_line {
+  width: 100%;
+  border-bottom: 1px solid #d3d3d3; /* Adjusted border thickness */
+  margin: 6px 0; /* Adjusted margin */
+}
+
+
+/*  this is the restaurent menue hader  block's css  */
+
+.menu-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-black);
+  color: var(--white);
+  padding: 10px;
+}
+
+.menu-top-header-img {
+  width: 150px;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.menu-top-header-details {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.menu-top-header-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.menu-top-header-cuisines {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 5px;
+}
+
+.menu-top-header-locality {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.menu-top-header-distance {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.menu-top-header-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.menu-top-header-avg-rating {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.menu-top-header-total-ratings {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+
+
+
+
+/* Hide and show based on class */
+.visible {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
