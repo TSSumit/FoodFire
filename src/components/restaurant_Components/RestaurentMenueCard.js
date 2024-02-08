@@ -43,7 +43,7 @@ const RestaurantMenuCard = ({ menueItem }) => {
                     <p id='menue_title'>{name}</p>
                     <div id='menue_price'>
                         {finalPrice==undefined? 
-                            <div id='normal_price'>&#x20B9;{price/100}</div>
+                            <div id='normal_price'>&#x20B9;{price?(price/100):(defaultPrice/100)}</div>
                             :
                             <div id='offer_price'>
                                 <div id='defoult_price'>&#x20B9;{defaultPrice/100}</div>
@@ -54,14 +54,25 @@ const RestaurantMenuCard = ({ menueItem }) => {
                     </div>
                     <p id='menue_description'>{description}</p>
                 </div>
-                <div id="image_and_availability" >
-                    {imageId && <img id='menue_img' src={imageUrl} alt="Menu Image" />}
-                    {inStock > 0 ? (
-                        <button className="menue-button" id='menue_add_card'>Add</button>
+                
+                <div id="image_and_availability">
+                    {imageId && (
+                        <img id='menue_img' src={imageUrl} onError={(e) => { e.target.style.display = 'none'; }} />
+                    )}
+                    {imageId ? (
+                        inStock > 0 ? (
+                        <button className="menue-button" id='menue_add_card' style={{ bottom: '-30px' }}>Add</button>
+                        ) : (
+                        <button className='menue-button' id='menue_unavailability' style={{ bottom: '-30px' }}>Not available</button>
+                        )
                     ) : (
-                        <button className='menue-button' id='menue_unavailability'>Menu not available</button>
+                        <button className='menue-button' id='menue_unavailability' style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',padding:'5px', fontSize:"0.8rem" }}>Menue not available</button>
                     )}
                 </div>
+
+
+
+
             </div>
             <div className='style_line style_divider'></div>
         </div>
