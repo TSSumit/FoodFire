@@ -1,0 +1,504 @@
+
+body {
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding: 0px;
+  margin: 0;
+}
+body::-webkit-scrollbar {
+  width: 0px; 
+}
+#root{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  min-height: 100vh !important;
+  padding: 0px;
+}
+.header{
+  box-shadow: 0 15px 35px -20px rgba(40,44,63,.15);
+  /* background-color: #c14545; */
+  padding: 5px 2.5vw;
+  width: 95vw;
+  height: 5.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-end-end-radius: 4px;
+  margin-bottom: 3vh;
+}
+.logo-Container {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  border-radius: 300px;
+  width: 45px;
+  background-color: #fff;
+  transition: all 200ms ease-in-out; 
+}
+
+.logo:hover {
+  width: 55px; 
+}
+
+.nav-items{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-left: 5vw;
+  padding: 0;
+}
+.nav-items > ul{
+    overflow-x: visible;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nav-item {
+  list-style: none;
+  font-size:1rem;
+  font-weight: 550;
+  border: none;
+  border-radius: 3px;
+  padding: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-left: 12px;
+  margin-right: 12px;
+  /* background-color: rgb(194, 199, 203); */
+}
+
+.nav-item a {
+  text-decoration: none; 
+  color: #000;
+  padding: 3px 6px; /* Adjust padding as needed */
+  border-radius: 3px;
+}
+
+.nav-item a:hover {
+  color: #fc8019!important;
+  cursor: default;
+}
+
+.nav-item:hover{
+  color: #fc8019!important;
+  cursor: default;
+}
+
+.body{
+  background: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+}
+
+.filter_and_search{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+.search-container{
+  display: flex;
+  /* justify-content: end; */
+  margin-right: 5px;
+  padding: 2px;
+}
+.search-input{
+  padding-left: 5px;
+  width: 20vw;
+  box-sizing: border-box;
+  color: #000;
+  background: rgb(255, 255, 255);
+  border: 1px solid #aabcca;
+  border-right: 0;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  outline: none;
+  padding: 10px 15px 10px 20px;
+  box-shadow: 1px 2px 4px rgba(0,0,0,.08);
+}
+.search-button{
+  color: #fff;
+  cursor: pointer;
+  background-color: #0768b3;
+  border: none;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  outline: none;
+  margin-left: -4px;
+  padding: 10px 22px;
+  box-shadow: 1px 2px 4px rgba(0,0,0,.08);
+}
+.filter{
+  width: 55vw;
+  height: 2.6rem;
+  /* border: 2px solid black; */
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.filter::-webkit-scrollbar {
+  background-color: transparent; 
+}
+.filter_btn {
+  border-radius: 18px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(226, 226, 231);
+  padding: 9px 12px;
+  display: inline-grid;
+  width: max-content;
+  grid-auto-flow: column;
+  gap: 8px;
+  /* box-shadow: rgba(2, 6, 12, 0.04) 0px 2px 12px; */
+  box-shadow: 1px 2px 4px rgba(0,0,0,.08);
+  transition: all 100ms ease-in 0s;
+  margin: 0.3vw;
+}
+
+.filter_btn:hover {
+  background-color: rgb(245, 245, 245);
+  border-color: rgb(200, 200, 200);
+  box-shadow: rgba(2, 6, 12, 0.1) 0px 4px 16px;
+}
+
+.card-img{
+  width: 100%;
+  height: 110px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.restorent-card{
+  /* box-shadow: -1px 5px 10px 3px rgba(42,42,42,.2); */
+  padding: 8px;
+  font-size: 0.80rem;
+  font-family: 'Times New Roman';
+  width: 185px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin: 15px;
+}
+.restorent-card:hover{
+  transform: scale(0.95, 0.95);
+  transform-origin: center center;
+  transition: all 0.1s ease-in 0s;
+}
+
+.restaurant-containser{
+  text-decoration: none !important;
+}
+.restorent-tital{
+  font-size: 1rem;
+  margin: 0;
+  padding: 2px;
+  font-weight: 550;
+}
+.rating-time{
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+  font-size: 0.95rem;
+  font-weight: 550;
+}
+.star-img{
+  width: 0.64rem;
+  margin-left:2px;
+}
+.customer-rating{
+  padding: 2px;
+}
+.time-to-reach{
+    /* margin-left: 15px; */
+    padding: 2px;
+}
+.restaurant-containser{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2px;
+}
+.restorent-card{
+  color: rgba(2, 6, 12, 0.75);
+}
+
+.hotel-address-area{
+    font-size: 0.9rem;
+    padding: 2px;
+}
+.hotel-address-city{
+    padding: 2px;
+}
+
+.search-and-filter-skeleton {
+  width: 92vw;
+  height: 2.3rem;
+  margin-top: 4vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter_skeleton_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40vw;
+}
+
+.filter_skeleton {
+  width: 9.3vw;
+  height: 2rem;
+  border-radius: 15px !important;
+  /* background-color: #fc8019; */
+  background-color: cadetblue;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.search-skeleton-box {
+  width: 26vw;
+  height: 2rem;
+  /* background-color: #fc8019; */
+  border-radius: 15px !important;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+
+.restorent-card-skeleton{
+  /* height:200px; */
+  width: 201px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 15px;
+  /* border: 2px solid black; */
+}
+.skeleton{
+  margin-bottom: 8px;
+  border-radius: 4px;
+  /* border: 2px solid black; */
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+
+
+
+
+.halfLen{
+  height: 1rem;
+  width: 100%;
+}
+.fullLen{
+  height: 1rem;
+  width: 70%;
+}
+
+
+@keyframes skeleton-loading{
+  0%{
+    background-color: hsl(200, 20%, 95%);
+  }
+  100%{
+    background-color: hsl(200, 20%, 75%);
+  }
+}
+
+
+
+/* AboutPage.css */
+
+.about-page {
+  padding: 20px;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.about-heading {
+  color: #ff5722; /* Orange color */
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.about-paragraph {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Contact page */
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-heading {
+  color: #333;
+}
+
+.contact-description {
+  color: #555;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-label {
+  font-weight: bold;
+}
+
+.contact-input,
+.contact-textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+/*  Error page styling - */
+
+.error-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.error-container {
+  height: 35vh;
+  width: 60vw;
+  text-align: center;
+  /* background-color: #1da1f2; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-image img {
+  max-width: 33vw;
+  max-height: 33vh;
+}
+
+.error-info {
+  margin-left: 60px; 
+  text-align: left;
+  margin-top: 0px;
+}
+
+.error-heading {
+  font-size: 2rem;
+  font-weight: 950;
+}
+
+.error-message {
+  margin: 10px 0;
+  color: #555;
+}
+
+.home-button {
+  padding: 8px;
+  margin-top: 15px;
+  background-color: #ffffff; /* Green color for the button */
+  color: #121111;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+
+/* Footer styles */
+#main-footer {
+  height: 5rem;
+  background-color: #f1f1f6;
+  color: #000;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 5px ;
+  /* background-color: #4caf50; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;  
+}
+
+#footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#footer-text {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+
+/* 
+  
+{
+      type: "restaurant",
+      data: {
+        id: "74453",
+        name: "Domino's Pizza",
+        uuid: "87727dbd-7f2b-4857-9763-359624165845",
+        city: "21",
+        area: "Athwa",
+        totalRatingsString: "1000+ ratings",
+        cloudinaryImageId: "bz9zkh2aqywjhpankb07",
+        cuisines: ["Pizzas"],
+        costForTwo: 40000,
+        costForTwoString: "₹400 FOR TWO",
+        deliveryTime: 45,
+        minDeliveryTime: 45,
+        maxDeliveryTime: 45,
+        slaString: "45 MINS",
+        slugs: {
+          restaurant: "dominos-pizza-majura-nondh-test_surat",
+          city: "surat",
+        },
+        cityState: "21",
+        address:
+          "Shop 32 To 35, Sheetal Shopping Square,Near Lb Turning Point, Bhatar Road,MAJURA NONDH, Surat,GUJARAT-395001",
+        locality: "Bhatar Road",
+        parentId: 2456
+    },
+
+*/
+
+
