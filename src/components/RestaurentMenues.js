@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer"; 
+import MenuShimmer  from "./restaurant_Components/MeneShimmer";
 import {menue_api_URL} from "../utils/constants"
 import Error from "./Error";
 
@@ -43,7 +44,7 @@ const RestaurantMenues = () => {
   }
 
   if (loading) {
-    return <Shimmer />;
+    return <MenuShimmer />;
   }
 
   if (!catagoryData  || !offerCardData || !menuHeaderData) {

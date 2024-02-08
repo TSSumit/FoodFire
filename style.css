@@ -102,8 +102,8 @@ body::-webkit-scrollbar {
 .filter_and_search{
   display: flex;
   justify-content: space-between;
-  margin-left: 1vw;
-  margin-right: 1vw;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 .search-container{
   display: flex;
@@ -246,6 +246,7 @@ body::-webkit-scrollbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-left: 3rem;
 }
 
 .filter_skeleton_box {
@@ -467,6 +468,9 @@ body::-webkit-scrollbar {
   opacity: 0.8;
   margin-top: 10px;
 }
+
+
+
 
 
 /* 
