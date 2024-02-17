@@ -338,55 +338,98 @@ body::-webkit-scrollbar {
   line-height: 1.5;
 }
 
-/* Contact page */
-.contact-container {
+/* Contact Component Styles */
+.contact-us-container {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
+  background-color: #e1e1e1;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.contact-heading {
+.contact-us-container h2 {
+  text-align: center;
   color: #333;
 }
 
-.contact-description {
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label-text {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
   color: #555;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contact-label {
-  font-weight: bold;
-}
-
-.contact-input,
-.contact-textarea {
+.input-field {
+  width: 96%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
-.contact-button {
-  background-color: #4caf50;
-  color: #fff;
+.textarea-field {
+  width: 96%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.error-message {
+  color: red;
+}
+
+.submit-btn-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.submit-btn {
+  display: inline-block;
   padding: 10px 20px;
+  background-color: #ff7f0e;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.contact-button:hover {
-  background-color: #45a049;
+.submit-btn:hover {
+  background-color: #ff6600;
 }
 
+/* Food Ordering Theme */
+.food-ordering-theme {
+  background-color: #fff;
+  border: 2px solid #ccc;
+}
 
+.food-ordering-theme h2 {
+  color: #ff7f0e;
+}
+
+.input-field,
+.textarea-field {
+  background-color: #f4f4f4;
+}
+
+.submit-btn {
+  background-color: #ff7f0e;
+}
+
+.submit-btn:hover {
+  background-color: #ff6600;
+}
+
+/* Additional Styling */
 
 
 
@@ -471,38 +514,142 @@ body::-webkit-scrollbar {
 
 
 
+/* SignIn.js styling  */
+.color-red{
+  color: red;
+  font-weight: 500;
+}
+.signin-body{
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Container styles */
+.signin-container {
+  width: 448px;
+  height: fit-content;
+  padding: 24px;
+  margin-bottom: 17px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Header styles */
+.signin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.signin-header h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.close-icon {
+  width: 25px;
+  height: 25px;
+  position: relative;
+}
+
+.close-icon:before, .close-icon:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: black;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.close-icon:before {
+  transform: rotate(45deg);
+}
+
+.close-icon:after {
+  transform: rotate(-45deg);
+}
 
 
-/* 
-  
-{
-      type: "restaurant",
-      data: {
-        id: "74453",
-        name: "Domino's Pizza",
-        uuid: "87727dbd-7f2b-4857-9763-359624165845",
-        city: "21",
-        area: "Athwa",
-        totalRatingsString: "1000+ ratings",
-        cloudinaryImageId: "bz9zkh2aqywjhpankb07",
-        cuisines: ["Pizzas"],
-        costForTwo: 40000,
-        costForTwoString: "₹400 FOR TWO",
-        deliveryTime: 45,
-        minDeliveryTime: 45,
-        maxDeliveryTime: 45,
-        slaString: "45 MINS",
-        slugs: {
-          restaurant: "dominos-pizza-majura-nondh-test_surat",
-          city: "surat",
-        },
-        cityState: "21",
-        address:
-          "Shop 32 To 35, Sheetal Shopping Square,Near Lb Turning Point, Bhatar Road,MAJURA NONDH, Surat,GUJARAT-395001",
-        locality: "Bhatar Road",
-        parentId: 2456
-    },
+/* Form styles */
+.form-group {
+  margin-bottom: 20px;
+  width: 94%;
+}
 
-*/
+/* .form-group input {
+  background-color: #fff;
+  width: 80%;
+} */
 
 
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  background-color: #fff;
+  width: 100%;
+  height: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+
+#agreeToTerms{
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+}
+#agreeToTermsLabel{
+  display: flex;
+}
+#agreeToTermsLabelError{
+  font-size: 0.8rem;
+  font-family: Okra, Helvetica, sans-serif;
+}
+
+/* Button styles */
+.submit-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Toggle signin link styles */
+.toggle-signin p {
+  margin: 20px 1px;
+}
+
+.toggle-signin a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.toggle-signin a:hover {
+  text-decoration: underline;
+}

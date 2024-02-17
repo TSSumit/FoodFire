@@ -24,14 +24,14 @@ const Header=()=>{
                     className="nav-item signOut-btn"
                     onClick={() => setIsLoggedIn(false)} // Corrected onClick syntax
                     >
-                        <Link to="/">Sign out</Link>
+                        <Link to="/">Log out</Link>
                     </li>
                 ) : (
                     <li
                     className="nav-item signIn-btn"
                     onClick={() => setIsLoggedIn(true)} // Corrected onClick syntax
                     >
-                        <Link to="/">Sign in</Link>
+                        <Link to="/logIn">LogIn</Link>
                     </li>
                 )}
                 <li className="nav-item card-btn">

@@ -1,22 +1,58 @@
 import React from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
+const ContactUsSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, 'Name must be at least 2 characters')
+    .max(50, 'Name must be at most 50 characters')
+    .required('Name is required'),
+  email: Yup.string()
+    .email('Invalid email address')
+    .required('Email is required'),
+  message: Yup.string()
+    .min(10, 'Message must be at least 10 characters')
+    .required('Message is required'),
+});
 
 const Contact = () => {
+  const handleSubmit = (values, { setSubmitting }) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      setSubmitting(false);
+    }, 400);
+  };
+
   return (
-    <div className="contact-container">
-      <h2 className="contact-heading">Contact Us</h2>
-      <p className="contact-description">If you have any questions or concerns, feel free to reach out to us!</p>
-      <form className="contact-form">
-        <label htmlFor="name" className="contact-label">Your Name:</label>
-        <input type="text" id="name" name="name" className="contact-input" placeholder="Enter your name" required />
-
-        <label htmlFor="email" className="contact-label">Your Email:</label>
-        <input type="email" id="email" name="email" className="contact-input" placeholder="Enter your email" required />
-
-        <label htmlFor="message" className="contact-label">Your Message:</label>
-        <textarea id="message" name="message" className="contact-textarea" placeholder="Type your message here" required></textarea>
-
-        <button type="submit" className="contact-button">Submit</button>
-      </form>
+    <div className="contact-us-container">
+      <h2>Contact Us</h2>
+      <Formik
+        initialValues={{ name: '', email: '', message: '' }}
+        validationSchema={ContactUsSchema}
+        onSubmit={handleSubmit}
+      >
+        {({ isSubmitting }) => (
+          <Form>
+            <div className="contact-us-container food-ordering-theme">
+              <div className="form-group">
+                <label htmlFor="name" className="label-text">Name</label>
+                <input type="text" id="name" className="input-field" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email" className="label-text">Email</label>
+                <input type="email" id="email" className="input-field" />
+              </div>
+              <div className="form-group">
+                <label htmlFor="message" className="label-text">Message</label>
+                <textarea id="message" className="textarea-field"></textarea>
+              </div>
+              <div className='submit-btn-container'>
+                <button className="submit-btn">Submit</button>
+              </div>
+            </div>
+          </Form>
+        )}
+      </Formik>
     </div>
   );
 };
