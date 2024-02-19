@@ -1,6 +1,6 @@
-const profile= () =>{
+const Profile= () =>{
     return (
-        <div> this is a profile page</div>
+        <h2> this is a profile page</h2>
     )
 }
-export default profile;
+export default Profile;

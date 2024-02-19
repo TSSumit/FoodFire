@@ -8,6 +8,7 @@ import Error from "./components/Error.js";
 import Footer from "./components/Footer.js";
 import SignIn from "./components/signIn.js";
 import LogIn from "./components/logIn.js";
+import Profile from "./components/Profile.js";
 import RestaurentMenues from "./components/RestaurentMenues.js";
 import { createBrowserRouter, RouterProvider,Outlet } from "react-router-dom";
 
@@ -32,7 +33,13 @@ const appRouter=createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <About />
+                element: <About />,
+                children: [
+                    {
+                      path: "profile", 
+                      element: <Profile />
+                    }
+                ]
             },
             {
                 path: "/contact",

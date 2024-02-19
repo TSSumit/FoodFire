@@ -1,8 +1,12 @@
 import React from 'react';
+import Profile from "./Profile";
 
 const About = () => {
   return (
     <div className="about-page">
+      <div>
+        <Profile/>
+      </div>
       <div className="about-content">
         <h1 className="about-heading">About Us</h1>
         <p className="about-paragraph">
