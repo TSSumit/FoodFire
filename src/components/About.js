@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import food from "../Images/burger-image.png";
 import './aboutAndProfile.css';
+import Profile from "./profile";
 
 const About = () => {
   const [show, setShow] = useState(false);
@@ -23,6 +24,9 @@ const About = () => {
         <div className="about-right">
           <img src={food} alt="Food Image" />
         </div>
+      </div>
+      <div>
+        <Profile/>
       </div>
     </div>
   );
