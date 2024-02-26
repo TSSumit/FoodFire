@@ -315,28 +315,7 @@ body::-webkit-scrollbar {
 
 
 
-/* AboutPage.css */
 
-.about-page {
-  padding: 20px;
-}
-
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: justify;
-}
-
-.about-heading {
-  color: #ff5722; /* Orange color */
-  font-size: 2em;
-  margin-bottom: 15px;
-}
-
-.about-paragraph {
-  margin-bottom: 15px;
-  line-height: 1.5;
-}
 
 /* Contact Component Styles */
 .contact-us-container {

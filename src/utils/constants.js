@@ -12,3 +12,24 @@ export const swiggy_api_URL ="https://foodfire.onrender.com/api/restaurants?lat=
 export const menue_api_URL="https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=";
 
 export const menue_offerLogo_api_URL="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_30,h_30/";
+
+// Github - username
+export const Github_UserName = "ChetanNada";
+export const Github_Repository_Name = "Namaste-React";
+
+// Github API for User
+export const Github_API_User = "https://api.github.com/users/";
+
+// Social Media Links
+export const Linkedin_Link = "https://www.linkedin.com/in/chetannada/";
+export const Twitter_Link = "https://twitter.com/ChetanNada";
+export const Github_Link = "https://github.com/chetannada";
+export const Email_Link = "mailto:call2chetannada@gmail.com";
+
+// Github Authorization Token
+export const options = {
+  method: "GET",
+  headers: {
+    Authorization: "",
+  },
+};

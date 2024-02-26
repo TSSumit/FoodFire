@@ -1,0 +1,72 @@
+
+
+/* About us page CSS Start */
+.app-name {
+    text-decoration: none;
+    color: red;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+.about-profile-container {
+    margin: 40px auto 0px;
+    text-align: center;
+  }
+  
+  .about-profile-button {
+    background-color: var(--orange);
+    color: var(--light-black);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+  }
+  
+  .about-profile-button:hover {
+    background-color: var(--dark-green);
+  }
+  
+  .about-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 5px auto 0px;
+    justify-content: center;
+    align-items: center;
+    height: 406px;
+  }
+  .about-container .about-left {
+    padding-left: 10px;
+    overflow-y: hidden;
+  }
+  .about-container .about-left h1 {
+    font-size: 70px;
+  }
+  .about-container .about-left h1 span {
+    background-color: var(--orange);
+    padding: 0 10px;
+    border-radius: 15px;
+    color: var(--white);
+  }
+  .about-container .about-left h4 {
+    font-size: 25px;
+    padding-top: 10px;
+    font-style: italic;
+  }
+  .about-container .about-left h4 span {
+    color: var(--dark-orange);
+  }
+  .about-container .about-right {
+    padding-left: 20px;
+    overflow-y: hidden;
+  }
+  .about-container .about-right img {
+    width: 500px;
+    padding-right: 70px;
+  }
+  .about-left h1{
+    margin: 20px;
+  }
+  /* About us page CSS End */
+  

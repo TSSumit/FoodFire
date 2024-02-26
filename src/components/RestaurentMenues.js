@@ -32,9 +32,9 @@ const RestaurantMenues = () => {
       );
       const data = await response.json();
       console.log(data);
-      setMenuHeaderData(data?.data?.cards[0]?.card?.card?.info);
-      setOfferCardData(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.offers);
-      setCatagoryData(data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+      setMenuHeaderData(data?.data?.cards[2]?.card?.card?.info);
+      setOfferCardData(data?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers);
+      setCatagoryData(data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
     } catch (error) {
       console.error("Error fetching data:", error);
       setError(error);
