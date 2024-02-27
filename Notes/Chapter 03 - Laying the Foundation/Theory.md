@@ -1,4 +1,4 @@
-# Chapter 03 - Laying the Foundation
+# Laying the Foundation
 
 ## Q: browserlist
 

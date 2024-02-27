@@ -1,4 +1,4 @@
-# _Chapter 02 - Igniting our App_
+# _Igniting our App_
 
 ## Q: What is `NPM`?
 
@@ -26,20 +26,20 @@ npm init
 ### Parcel Features:
 
 1. HMR (Hot Module Replacement) - parcel keeps track of file changes via file watcher algorithm and renders the changes in the files
-1. File watcher algorithm - made with C++
-1. Minification
-1. Cleaning our code
-1. DEV and production Build
-1. Super fast building algorithm
-1. Image optimization
-1. Caching while development
-1. Compresses
-1. Compatible with older version of browser
-1. HTTPS in dev
-1. Port Number
-1. Consistent hashing algorithm
-1. Zero Configuration
-1. Automatic code splitting
+2. File watcher algorithm - made with C++
+3. Minification
+4. Cleaning our code
+5. DEV and production Build
+6. Super fast building algorithm
+7. Image optimization
+8. Caching while development
+9. Compresses
+10. Compatible with older version of browser
+11. HTTPS in dev
+12. Port Number
+13. Consistent hashing algorithm
+14. Zero Configuration
+15. Automatic code splitting
 
 ### installation commands:
 

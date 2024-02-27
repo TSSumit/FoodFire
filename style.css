@@ -147,6 +147,7 @@ body::-webkit-scrollbar {
 }
 .filter::-webkit-scrollbar {
   background-color: transparent; 
+  height: 0px;
 }
 .filter_btn {
   border-radius: 18px;
@@ -221,11 +222,13 @@ body::-webkit-scrollbar {
     padding: 2px;
 }
 .restaurant-containser{
+  
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   padding: 2px;
+
 }
 .restorent-card{
   color: rgba(2, 6, 12, 0.75);
@@ -237,6 +240,13 @@ body::-webkit-scrollbar {
 }
 .hotel-address-city{
     padding: 2px;
+}
+
+.match-not-found{
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-and-filter-skeleton {

@@ -1,6 +1,6 @@
 import React from 'react';
 import "./RestaurantMenusStyle.css";
-import RestaurantMenuCard from "./RestaurentMenueCard";
+import RestaurantMenuCard from "./restaurantMenueCard";
 
 const RestaurantContainer = ({ catagory }) => {
     const menueCategories=catagory?.categories;

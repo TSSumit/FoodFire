@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 import MenuShimmer  from "./restaurant_Components/MeneShimmer";
 import {menue_api_URL} from "../utils/constants"
 import Error from "./Error";
+import useRestaurantMenues from "../utils/useRestaurantMenues";
 
 // import RestaurantMenusStyle from "./restaurant_Components/RestaurantMenusStyle.css";
 import MenuTopHeader from './restaurant_Components/MenuTopHeader';
@@ -15,33 +16,9 @@ import RestaurantContainer from './restaurant_Components/RestaurantContainer';
 const RestaurantMenues = () => {
   const parameters = useParams();
   const { resId } = parameters;
-  const [menuHeaderData, setMenuHeaderData] = useState(null);
-  const [offerCardData, setOfferCardData] = useState(null);
-  const [catagoryData, setCatagoryData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [menuHeaderData,offerCardData,catagoryData,error,loading]=useRestaurantMenues(resId);
 
-  useEffect(() => {
-    getRestaurantInfo();
-  }, []);
-
-  async function getRestaurantInfo() {
-    try {
-      const response = await fetch(
-        menue_api_URL+resId
-      );
-      const data = await response.json();
-      console.log(data);
-      setMenuHeaderData(data?.data?.cards[2]?.card?.card?.info);
-      setOfferCardData(data?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers);
-      setCatagoryData(data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      setError(error);
-    } finally {
-      setLoading(false);
-    }
-  }
+  
 
   if (loading) {
     return <MenuShimmer />;

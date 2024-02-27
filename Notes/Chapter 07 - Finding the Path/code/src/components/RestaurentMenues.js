@@ -7,7 +7,7 @@ import Error from "./Error";
 // import RestaurantMenusStyle from "./restaurant_Components/RestaurantMenusStyle.css";
 import MenuTopHeader from './restaurant_Components/MenuTopHeader';
 import RestaurantOfferCard from './restaurant_Components/RestaurantOfferCard'
-import RestaurantMenueCard from "./restaurant_Components/RestaurentMenueCard";
+import RestaurantMenueCard from "./restaurant_Components/restaurantMenueCard";
 import RestaurantContainer from './restaurant_Components/RestaurantContainer';
 
 

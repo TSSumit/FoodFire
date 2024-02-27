@@ -1,3 +1,5 @@
+# Exploring the world
+
 ## Q: Why React  is Fast?
 
 * Because it has virtualDom , REconciliation, Diff algorithm.
@@ -44,7 +46,6 @@ const Counter = () => {
 
 export default Counter;
 ```
-
 
 Notes:
 The useState hook returns an array with two elements: the current state value and a function to update the state.

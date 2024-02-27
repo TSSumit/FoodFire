@@ -4,7 +4,7 @@ import "./RestaurantMenusStyle.css";
 // import {CDN_URL} from '../../utils/constants';
 
 const RestaurantMenuCard = ({ menueItem }) => {
-    console.log("the menu items are :-   ", menueItem);
+    // console.log("the menu items are :-   ", menueItem);
 
     const {
         id,

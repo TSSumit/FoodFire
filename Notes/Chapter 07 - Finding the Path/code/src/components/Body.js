@@ -139,7 +139,7 @@ function filterData(searchText,restaurants){
                             type="text" 
                             className="search-input" 
                             id="search-bar" 
-                            placeholder="Search a restaurent you want..."  
+                            placeholder="Search a restaurant you want..."  
                             value={searchText} 
                             onChange={(e)=>{
                                 setSearchText(e?.target?.value);
@@ -176,7 +176,7 @@ function filterData(searchText,restaurants){
                                 const src = CDN_URL + cloudinaryImageId;
                                 console.log(name+"    "+restaurant?.info?.id);
                                 return (
-                                    <Link to={`/restaurent/${restaurant?.info?.id}`} style={{ textDecoration: 'none' }}>
+                                    <Link to={`/restaurant/${restaurant?.info?.id}`} style={{ textDecoration: 'none' }}>
                                         <RestaurantCard
                                             key={restaurant?.info?.id}
                                             hotelName={name}
