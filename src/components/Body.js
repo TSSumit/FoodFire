@@ -7,12 +7,17 @@ import { Link } from "react-router-dom";
 import { filterData } from "../utils/helperFunctions";
 import useRestaurants from "../utils/useRestaurants";
 import { swiggy_api_URL } from "../utils/constants";
+import useOnline from "../utils/useOnline";
+import UserOffline from "./UserOffline";
 
     const Body=()=>{
         const [searchText, setSearchText]=useState("");
         const [errorMessage, setErrorMessage] = useState("");
         const [allRestaurants,FilterRes]=useRestaurants(swiggy_api_URL);
         const [filteredRestaurants, setfilteredRestaurants]=useState(null);
+        const isOnline=useOnline();
+        
+        if(!isOnline) return <UserOffline/>
         
 
         const searchData = (searchText, restaurants) => {
@@ -39,6 +44,7 @@ import { swiggy_api_URL } from "../utils/constants";
                     <div className="filter">
                         <button 
                             className="filter_btn filter_btn"
+                            
                             onClick={()=>{
                                 const filteredList=allRestaurants.filter((res)=> res.info.avgRating>4.2 );
                                 setfilteredRestaurants(filteredList);
