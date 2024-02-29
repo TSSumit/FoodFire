@@ -1,10 +1,10 @@
-import {LOGO_URL} from "../utils/constants";
 import { useState } from "react";
-import UserAuthentication from "./AuthenticateUser";
-import SortingComponent from "./SortingComponent";
+import {LOGO_URL} from "../utils/constants";
+import useOnline from "../utils/useOnline";
 import { Link } from "react-router-dom";
 const Header=()=>{
     const [isLoggedIn,setIsLoggedIn]=useState(true);
+    const isonline=useOnline();
     const handleLogout = () => {
         const confirmLogout = window.confirm("Are you sure about logout?");
         if (confirmLogout) {
@@ -22,14 +22,18 @@ const Header=()=>{
             <ul className="nav-items">
                 
                 <li className="nav-item home-btn" ><Link to="/">Home</Link></li>
+                <li className="nav-item offer-btn"><Link to="/instamart">InstaMart</Link></li>
                 <li className="nav-item offer-btn"><Link to="/contact">Contact</Link></li>
                 <li className="nav-item about-btn"><Link to="/about">About</Link></li>
+                {/* <li className="nav-item card-btn"><Link to="/card">Card</Link></li> */}
                 {isLoggedIn ? (
                     <li
                         className="nav-item signOut-btn"
                         onClick={handleLogout}
                     >
-                        <Link to="/">Log out</Link>
+                        <Link to="/">
+                            Log out <span className="isOnlineOffline" style={(isonline!=true)?{ backgroundColor: "#9d2a01" }:{ backgroundColor: "#00ad1d"}}></span>
+                        </Link>
                     </li>
                 ) : (
                     <li
@@ -39,8 +43,7 @@ const Header=()=>{
                         <Link to="/logIn">LogIn</Link>
                     </li>
                 )}
-                <li className="nav-item card-btn">
-                <Link to="/card">Card</Link></li>
+                
             </ul>
         </div>
     )

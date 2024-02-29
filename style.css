@@ -18,6 +18,10 @@ body::-webkit-scrollbar {
   min-height: 100vh !important;
   padding: 0px;
 }
+.bodyContainer{
+  width: 100%;
+  min-height: 400px;
+}
 .header{
   box-shadow: 0 15px 35px -20px rgba(40,44,63,.15);
   /* background-color: #c14545; */
@@ -52,7 +56,7 @@ body::-webkit-scrollbar {
   list-style: none;
   display: flex;
   align-items: center;
-  margin-left: 5vw;
+  margin-left: 4vw;
   padding: 0;
 }
 .nav-items > ul{
@@ -92,6 +96,15 @@ body::-webkit-scrollbar {
   color: #fc8019!important;
   cursor: default;
 }
+
+.isOnlineOffline {
+  display: inline-block;
+  width: 8px ; 
+  height: 8px ; 
+  background-color: #9d2a01; 
+  border-radius: 50%; 
+}
+
 
 .body{
   background: rgb(255, 255, 255);

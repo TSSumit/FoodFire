@@ -1,8 +1,7 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body.js";
-import About from "./components/About.js";
 import Contact from "./components/Contact.js";
 import Error from "./components/Error.js";
 import Footer from "./components/Footer.js";
@@ -10,12 +9,17 @@ import SignIn from "./components/signIn.js";
 import LogIn from "./components/logIn.js";
 import RestaurentMenues from "./components/RestaurentMenues.js";
 import { createBrowserRouter, RouterProvider,Outlet } from "react-router-dom";
+import Shimmer from "./components/Shimmer.js";
+const About=lazy(()=>import("./components/About.js"));
+const InstaMart=lazy(() => import("./components/instaMart.js"));
 
 const AppLayout= ()=>{
     return (
         <div className="app">
             <Header></Header>
-            <Outlet></Outlet>
+            <div className="bodyContainer">
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     )
@@ -32,7 +36,9 @@ const appRouter=createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <About />,
+                element: <Suspense fallback={'Loding About ..........'}>
+                            <About />
+                        </Suspense>,
                 // children: [
                 //     {
                 //       path: "profile", 
@@ -55,7 +61,14 @@ const appRouter=createBrowserRouter([
             {
                 path:"/signin",
                 element:<SignIn/>
+            },
+            {
+                path:"/instamart",
+                element:<Suspense fallback=<Shimmer/>>
+                            <InstaMart/>
+                        </Suspense>
             }
+
         ]
     },
     
