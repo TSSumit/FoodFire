@@ -5,7 +5,12 @@ import SortingComponent from "./SortingComponent";
 import { Link } from "react-router-dom";
 const Header=()=>{
     const [isLoggedIn,setIsLoggedIn]=useState(true);
-    
+    const handleLogout = () => {
+        const confirmLogout = window.confirm("Are you sure about logout?");
+        if (confirmLogout) {
+          setIsLoggedIn(false);
+        }
+    };
     return (
         <div className="header">
             <div className="logo-Container">
@@ -21,8 +26,8 @@ const Header=()=>{
                 <li className="nav-item about-btn"><Link to="/about">About</Link></li>
                 {isLoggedIn ? (
                     <li
-                    className="nav-item signOut-btn"
-                    onClick={() => setIsLoggedIn(false)} // Corrected onClick syntax
+                        className="nav-item signOut-btn"
+                        onClick={handleLogout}
                     >
                         <Link to="/">Log out</Link>
                     </li>

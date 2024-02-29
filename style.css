@@ -382,6 +382,7 @@ body::-webkit-scrollbar {
 .submit-btn {
   display: inline-block;
   padding: 10px 20px;
+  margin: 10px 0px;
   background-color: #ff7f0e;
   border: none;
   border-radius: 5px;
@@ -459,7 +460,7 @@ body::-webkit-scrollbar {
 }
 
 .error-message {
-  margin: 10px 0;
+  /* margin: px 0; */
   color: #555;
 }
 
@@ -510,17 +511,19 @@ body::-webkit-scrollbar {
 }
 .signin-body{
   width: 100vw;
-  height: 70vh;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 /* Container styles */
 .signin-container {
-  width: 448px;
+  display: inline-block;
+  width: 350px;
+  max-height: 394px;
+  margin-bottom: .5vh;
   height: fit-content;
-  padding: 24px;
-  margin-bottom: 17px;
+  padding: 15px 24px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -569,7 +572,7 @@ body::-webkit-scrollbar {
 
 /* Form styles */
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   width: 94%;
 }
 
@@ -596,8 +599,11 @@ label {
 
 
 .error-message {
-  color: red;
-  margin-top: 5px;
+  color: rgb(224, 53, 70);
+  visibility: visible;
+  font-size: .7rem;
+  font-weight: 550;
+  font-family: Okra, Helvetica, sans-serif;
 }
 
 #agreeToTerms{
@@ -631,7 +637,7 @@ label {
 
 /* Toggle signin link styles */
 .toggle-signin p {
-  margin: 20px 1px;
+  margin: -5px 1px;
 }
 
 .toggle-signin a {

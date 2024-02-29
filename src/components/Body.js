@@ -141,9 +141,9 @@ import UserOffline from "./UserOffline";
                                     const { name, avgRating, cuisines, locality, cloudinaryImageId } = restaurant.info;
                                     const rating = avgRating + "  •  ";
                                     const src = CDN_URL + cloudinaryImageId;
-                                    console.log(name+"    "+restaurant?.info?.id);
+                                    // console.log(name+"    "+restaurant?.info?.id);
                                     return (
-                                        <Link to={`/restaurent/${restaurant?.info?.id}`} style={{ textDecoration: 'none' }}>
+                                        <Link key={restaurant?.info?.id} to={`/restaurent/${restaurant?.info?.id}`} style={{ textDecoration: 'none' }}>
                                             <RestaurantCard
                                                 key={restaurant?.info?.id}
                                                 hotelName={name}

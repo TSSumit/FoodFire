@@ -2,14 +2,11 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link, useNavigate } from 'react-router-dom';
+import { LogInAuth } from '../utils/helperFunctions';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email address').required('Email is required'),
   password: Yup.string()
-    .matches(
-      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[$#@]).{8,}$/,
-      'Password must contain at least one uppercase letter, lowercase letter, number, special character, and be at least 8 characters long'
-    )
     .required('Password is required'),
 });
 
@@ -32,9 +29,24 @@ const logIn = () => {
           validationSchema={LoginSchema}
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-              navigate('/');
+              try {
+                const logInMessage=LogInAuth(values.email,values.password);
+                if(logInMessage==='Successfully logged in!'){
+                  alert(logInMessage+" with \n"+JSON.stringify(values, null, 2));
+                  navigate('/');
+                  setSubmitting(false);
+                }
+                else if(logInMessage==='Wrong password'){
+                  alert(logInMessage+" with \n"+JSON.stringify(values, null, 2));
+                }
+                else{
+                  alert(logInMessage+" with \n"+JSON.stringify(values, null, 2));
+                  navigate('/signIn');
+                }
+              } 
+              catch (error) {
+                alert('Error during login:', error);    // Handle error appropriately
+              }            
             }, 400);
           }}
         >
