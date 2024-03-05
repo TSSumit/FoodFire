@@ -1,3 +1,6 @@
+/dist 
+/.parcel-cache 
+/node_modules 
 /node_modules
-/dist
-/.parcel-cache
+.parcel-cache
+yarn.lock
