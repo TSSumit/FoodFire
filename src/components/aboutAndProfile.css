@@ -29,19 +29,20 @@
   
   .about-container {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin: 5px auto 0px;
     justify-content: center;
     align-items: center;
-    height: 406px;
+    flex-wrap: nowrap;
+    margin: 5px auto 0px;
+    height: fit-content;
+    width: fit-content;
   }
   .about-container .about-left {
     padding-left: 10px;
-    overflow-y: hidden;
+    min-width: 400px;
+    display: block;
   }
   .about-container .about-left h1 {
-    font-size: 70px;
+    font-size: 3.5rem;
   }
   .about-container .about-left h1 span {
     background-color: var(--orange);
@@ -51,7 +52,7 @@
   }
   .about-container .about-left h4 {
     font-size: 25px;
-    padding-top: 10px;
+    padding-top: 5px;
     font-style: italic;
   }
   .about-container .about-left h4 span {
@@ -59,10 +60,10 @@
   }
   .about-container .about-right {
     padding-left: 20px;
-    overflow-y: hidden;
+    display: block;
   }
   .about-container .about-right img {
-    width: 500px;
+    width: 300px;
     padding-right: 70px;
   }
   .about-left h1{
@@ -71,19 +72,18 @@
   /* About us page CSS End */
   /* Profile Class page CSS Start */
 .profile-class-container {
-  height: 400px;
+  height: max-content;
   margin-bottom: 95px;
   display: flex;
-
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
 }
 .profile-container {
+  width: fit-content;
   padding: 20px 10px;
   margin: 20px;
   border-radius: 5px;
-  overflow: hidden;
   box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.71);
   background: #fff;
 }
@@ -101,7 +101,7 @@
 }
 .repo-container {
   height: 100%;
-  min-width: 20px;
+  min-width: 300px;
   width: fit-content;
   padding: 20px 10px;
   margin: 20px;

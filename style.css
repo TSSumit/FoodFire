@@ -35,10 +35,14 @@ body::-webkit-scrollbar {
   margin-bottom: 3vh;
 }
 .logo-Container {
-  width: 100px;
+  height: 100px;
+  width: 18vw;
+  min-width: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo {
@@ -51,39 +55,37 @@ body::-webkit-scrollbar {
 .logo:hover {
   width: 55px; 
 }
+.headerUserName{
+  font-weight: lighter;
+  padding-left: 10px;
+}
 
 .nav-items{
   list-style: none;
+  width: 50vw;
+  min-width: 333px;
+  height: fit-content;
   display: flex;
   align-items: center;
-  margin-left: 4vw;
-  padding: 0;
-}
-.nav-items > ul{
-    overflow-x: visible;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.nav-item {
+  justify-content: space-evenly;
   list-style: none;
   font-size:1rem;
   font-weight: 550;
-  border: none;
-  border-radius: 3px;
-  padding: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
-  margin-left: 12px;
-  margin-right: 12px;
-  /* background-color: rgb(194, 199, 203); */
+  overflow-x: auto;
+  margin: 0px;
+  padding: 0px;
+}
+.nav-items > ul{
+  overflow-x: visible;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .nav-item a {
+  width: fit-content;
   text-decoration: none; 
   color: #000;
-  padding: 3px 6px; /* Adjust padding as needed */
   border-radius: 3px;
 }
 
@@ -660,4 +662,47 @@ label {
 
 .toggle-signin a:hover {
   text-decoration: underline;
+}
+
+
+/* instamart styling */
+.instamartBody{
+  margin: 20px;
+  height: auto;
+  width: 97vw;
+  /* background: #007bff; */
+
+}
+.instamartBody p{
+  display: inline-block;
+}
+.instamartBox{
+  border: 2px solid rgb(81, 80, 80);
+  width: 60vw;
+  background-color: #dce4ff;
+
+}
+.sectionbox{
+  margin: 10px 2px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #ededed;
+  border: 2px solid gray;
+}
+.sectionHeader{
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+.sectionHeader p{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.instamartpara{
+  border: 2px solid rgb(150, 150, 150);
+  border-radius: 10px;
 }

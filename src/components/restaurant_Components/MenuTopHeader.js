@@ -16,7 +16,7 @@ const MenuTopHeader = ({ menueItem }) => {
         feeDetails:{icon}
     } = menueItem;
     const deliveryFees=2500;
-    console.log("the menu items are :-----   ", menueItem, id , name);
+    // console.log("the menu items are :-----   ", menueItem, id , name);
     
     const imageUrl = `https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${cloudinaryImageId}`;
 

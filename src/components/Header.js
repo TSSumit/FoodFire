@@ -1,8 +1,11 @@
-import { useState } from "react";
+import react,{ useState, useContext    } from "react";
 import {LOGO_URL} from "../utils/constants";
 import useOnline from "../utils/useOnline";
 import { Link } from "react-router-dom";
+import { UserContext } from "../utils/UserContext";
 const Header=()=>{
+    const { user } = useContext(UserContext);
+    console.log(user);
     const [isLoggedIn,setIsLoggedIn]=useState(true);
     const isonline=useOnline();
     const handleLogout = () => {
@@ -18,6 +21,9 @@ const Header=()=>{
                     className="logo"
                     src={LOGO_URL}
                 />
+                {/* {(user.name!="UserName") && */}
+                
+                {<span className="headerUserName">{user.name} </span>}
             </div>
             <ul className="nav-items">
                 

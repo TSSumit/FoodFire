@@ -1,17 +1,28 @@
-import React from 'react';
+import React,{ createContext, useContext, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link, useNavigate } from 'react-router-dom';
-import { LogInAuth } from '../utils/helperFunctions';
+import { LogInAuth, UserName } from '../utils/helperFunctions';
+import { UserContext } from "../utils/UserContext";
+
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string().email('Invalid email address').required('Email is required'),
   password: Yup.string()
-    .required('Password is required'),
+  .required('Password is required'),
 });
 
 const logIn = () => {
   const navigate = useNavigate();
+  const { updateUser } = useContext(UserContext);
+  
+  const handleClick = (email,password) => {
+    const cname=UserName(email,password);
+    console.log(cname+"  "+email+"  "+password);
+    updateUser(cname, email);
+  };
+
+   
 
   return (
     <div className='signin-body'>
@@ -32,6 +43,8 @@ const logIn = () => {
               try {
                 const logInMessage=LogInAuth(values.email,values.password);
                 if(logInMessage==='Successfully logged in!'){
+                  console.log(values.email+" ----  "+values.password)
+                  handleClick(values.email,values.password);
                   alert(logInMessage+" with \n"+JSON.stringify(values, null, 2));
                   navigate('/');
                   setSubmitting(false);
@@ -45,7 +58,7 @@ const logIn = () => {
                 }
               } 
               catch (error) {
-                alert('Error during login:', error);    // Handle error appropriately
+                alert('Error during login:',);    // Handle error appropriately
               }            
             }, 400);
           }}

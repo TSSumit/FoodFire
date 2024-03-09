@@ -14,10 +14,11 @@ import RestaurantContainer from './restaurant_Components/RestaurantContainer';
 
 
 const RestaurantMenues = () => {
+  const [menueContainer,setMenueContainer]=new useState("..");
   const parameters = useParams();
   const { resId } = parameters;
   const [menuHeaderData,offerCardData,catagoryData,error,loading]=useRestaurantMenues(resId);
-
+  
   
 
   if (loading) {
@@ -53,7 +54,17 @@ const RestaurantMenues = () => {
         <div id="restorant_menue_catagory">
           {catagoryData.map((item, index) => (
             (item.card?.card?.itemCards || item.card?.card?.categories) ? (
-              <RestaurantContainer key={index} catagory={item?.card?.card} />
+              
+              <RestaurantContainer 
+                  key={index} 
+                  catagory={item?.card?.card} 
+                  isv={menueContainer==JSON.stringify(item.card.card.title)} 
+                  setmc={()=>{
+                    (menueContainer==JSON.stringify(item.card.card.title))?
+                        setMenueContainer("..")
+                      :
+                        setMenueContainer(JSON.stringify(item.card.card.title))
+                  }}  />
             ) : (
               null
             )
