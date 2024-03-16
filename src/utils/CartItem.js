@@ -4,34 +4,38 @@ import { CDN_URL } from './constants';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from './cartSlice';
+import { useSelector } from 'react-redux';
 
-const CartItem = ({ items }) => {
-
-    const {
-        id,
-        name,
-        price,
-        defaultPrice,
-        finalPrice,
-        itemAttribute: { vegClassifier },
-        isBestseller,
-        inStock,
-        description,
-        imageId,
-        showImage
-    } = items;
+const CartItem = ({ item }) => {
+  
+  const {
+    id,
+    name,
+    price,
+    defaultPrice,
+    finalPrice,
+    itemAttribute: { vegClassifier },
+    isBestseller,
+    inStock,
+    description,
+    imageId,
+    showImage
+  } = item;
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(id+","+name+","+price)
     const  dispatch=useDispatch();
     const handleRemoveItem = () => {
-      // Check if the item exists in the cart
-      const isItemInCart = items.some(item => item.id === items.id);
-      if (isItemInCart) {
-          dispatch(removeItem(items));
-      }       
-  }
+      const index = cartItems.findIndex(cartItem => cartItem.id === item.id);
+      if (index !== -1) {   // Check if the item exists in the cart
+          dispatch(removeItem(index));
+      }
+    }
+
   
     const imageUrl = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+imageId;
 
     return (
+      
         <div id='outer_box'> 
             <div id="menu_card">
                 <div id='description_box'>
@@ -70,12 +74,12 @@ const CartItem = ({ items }) => {
                     )}
                     {imageId ? (
                         inStock > 0 ? (
-                        <button className="menue-button" id='menue_add_card' style={{ bottom: '-30px' }} onClick={handleRemoveItem}>Add</button>
+                        <button className="menue-button" id='menue_add_card' style={{ bottom: '-30px' }} onClick={handleRemoveItem}>Remove</button>
                         ) : (
-                        <button className='menue-button' id='menue_unavailability' style={{ bottom: '-30px' }} onClick={handleRemoveItem}>Not available</button>
+                        <button className='menue-button' id='menue_unavailability' style={{ bottom: '-30px' }} onClick={handleRemoveItem}>Remove</button>
                         )
                     ) : (
-                        <button className='menue-button' id='menue_unavailability' style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',padding:'5px', fontSize:"0.8rem" }} onClick={handleRemoveItem}>Add</button>
+                        <button className='menue-button' id='menue_unavailability' style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',padding:'5px', fontSize:"0.8rem" }} onClick={handleRemoveItem}>Remove</button>
                     )}
                 </div>
             </div>

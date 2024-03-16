@@ -8,7 +8,12 @@ const  cartSlice=createSlice({
     reducers:{
         addItem:(state, action)=>{
             state.items.push(action.payload);
-            state.price+=(action.payload.price);
+            const price=action.payload.defaultPrice;
+            if(!price){
+                price=action.payload.price;
+            }
+            if(price)state.price+=(action.payload.price);
+            console.log(action.payload.price)
         },
         clearCart:(state)=>{
             state.items=[];
@@ -16,11 +21,14 @@ const  cartSlice=createSlice({
         },
         
         removeItem: (state, action) => {
-            const removedItem = action.payload;
-            const removedItemPrice = removedItem.price;
-            state.items = state.items.filter(item => item.id !== removedItem.id);
+            const index = action.payload;
+            const removedItemPrice = state.items[index].price;
+            if(!removedItemPrice)removedItemPrice=state.items[index].defaultPrice;
+            state.items.splice(index, 1); // Remove one item at the found index
+
             state.price -= removedItemPrice;
         }
+        
     }
 })
 

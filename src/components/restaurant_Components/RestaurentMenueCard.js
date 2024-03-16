@@ -24,9 +24,9 @@ const RestaurantMenuCard = ({ menueItem }) => {
     const  dispatch=useDispatch();
     const handleAddItem=()=>{
         if (inStock > 0) {
-            dispatch(addItem(menueItem));
             // const addToCart = confirm("Do you want to add this item to your cart?");
             // if (addToCart) {
+                dispatch(addItem(menueItem));
             // }
         } else {
             alert("Sorry, this item is currently out of stock. Please try again later.");
