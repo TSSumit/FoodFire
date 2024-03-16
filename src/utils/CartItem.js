@@ -1,12 +1,11 @@
-// RestaurantMenuCard.jsx
-import React from 'react';
-import "./RestaurantMenusStyle.css";
 import { useDispatch } from 'react-redux';
-import { addItem } from '../../utils/cartSlice';
-// import {CDN_URL} from '../../utils/constants';
+import { addItem, removeItem } from './cartSlice';
+import { CDN_URL } from './constants';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { addItem } from './cartSlice';
 
-const RestaurantMenuCard = ({ menueItem }) => {
-    // console.log("the menu items are :-   ", menueItem);
+const CartItem = ({ items }) => {
 
     const {
         id,
@@ -20,18 +19,16 @@ const RestaurantMenuCard = ({ menueItem }) => {
         description,
         imageId,
         showImage
-    } = menueItem;
+    } = items;
     const  dispatch=useDispatch();
-    const handleAddItem=()=>{
-        if (inStock > 0) {
-            dispatch(addItem(menueItem));
-            // const addToCart = confirm("Do you want to add this item to your cart?");
-            // if (addToCart) {
-            // }
-        } else {
-            alert("Sorry, this item is currently out of stock. Please try again later.");
-        }        
-    }
+    const handleRemoveItem = () => {
+      // Check if the item exists in the cart
+      const isItemInCart = items.some(item => item.id === items.id);
+      if (isItemInCart) {
+          dispatch(removeItem(items));
+      }       
+  }
+  
     const imageUrl = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+imageId;
 
     return (
@@ -73,22 +70,18 @@ const RestaurantMenuCard = ({ menueItem }) => {
                     )}
                     {imageId ? (
                         inStock > 0 ? (
-                        <button className="menue-button" id='menue_add_card' style={{ bottom: '-30px' }} onClick={handleAddItem}>Add</button>
+                        <button className="menue-button" id='menue_add_card' style={{ bottom: '-30px' }} onClick={handleRemoveItem}>Add</button>
                         ) : (
-                        <button className='menue-button' id='menue_unavailability' style={{ bottom: '-30px' }} onClick={handleAddItem}>Not available</button>
+                        <button className='menue-button' id='menue_unavailability' style={{ bottom: '-30px' }} onClick={handleRemoveItem}>Not available</button>
                         )
                     ) : (
-                        <button className='menue-button' id='menue_unavailability' style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',padding:'5px', fontSize:"0.8rem" }} onClick={handleAddItem}>Add</button>
+                        <button className='menue-button' id='menue_unavailability' style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',padding:'5px', fontSize:"0.8rem" }} onClick={handleRemoveItem}>Add</button>
                     )}
                 </div>
-
-
-
-
             </div>
             <div className='style_line style_divider'></div>
         </div>
     );
 };
 
-export default RestaurantMenuCard;
+export default CartItem;

@@ -7,15 +7,19 @@ import Error from "./components/Error.js";
 import Footer from "./components/Footer.js";
 import SignIn from "./components/signIn.js";
 import LogIn from "./components/logIn.js";
+import Cart from "./components/Cart.js";
 import RestaurentMenues from "./components/RestaurentMenues.js";
 import { createBrowserRouter, RouterProvider,Outlet } from "react-router-dom";
 import Shimmer from "./components/Shimmer.js";
 import { UserProvider } from "./utils/UserContext";
+import { Provider } from "react-redux";
 const About=lazy(()=>import("./components/About.js"));
+import store from "./utils/Storage.js";
 const InstaMart=lazy(() => import("./components/InstaMart.js"));
 
 const AppLayout= ()=>{
     return (
+        <Provider store={store}>
             <div className="app">
                 <UserProvider>
                     <Header></Header>
@@ -25,6 +29,7 @@ const AppLayout= ()=>{
                     <Footer></Footer>
                 </UserProvider>
             </div>
+        </Provider>
             
     )
 }
@@ -65,6 +70,10 @@ const appRouter=createBrowserRouter([
             {
                 path:"/signin",
                 element:<SignIn/>
+            },
+            {
+                path:"/cart",
+                element:<Cart/>
             },
             {
                 path:"/instamart",

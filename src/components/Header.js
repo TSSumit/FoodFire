@@ -3,6 +3,8 @@ import {LOGO_URL} from "../utils/constants";
 import useOnline from "../utils/useOnline";
 import { Link } from "react-router-dom";
 import { UserContext } from "../utils/UserContext";
+import { useSelector } from 'react-redux';
+import store from "../utils/Storage";
 const Header=()=>{
     const { user } = useContext(UserContext);
     console.log(user);
@@ -14,6 +16,8 @@ const Header=()=>{
           setIsLoggedIn(false);
         }
     };
+    const cartItems = useSelector((store) => store.cart.items);
+    console.log(cartItems);
     return (
         <div className="header">
             <div className="logo-Container">
@@ -28,10 +32,10 @@ const Header=()=>{
             <ul className="nav-items">
                 
                 <li className="nav-item home-btn" ><Link to="/">Home</Link></li>
-                <li className="nav-item offer-btn"><Link to="/instamart">InstaMart</Link></li>
+                {/* <li className="nav-item offer-btn"><Link to="/instamart">InstaMart</Link></li> */}
                 <li className="nav-item offer-btn"><Link to="/contact">Contact</Link></li>
                 <li className="nav-item about-btn"><Link to="/about">About</Link></li>
-                {/* <li className="nav-item card-btn"><Link to="/card">Card</Link></li> */}
+                <li className="nav-item cart-btn"><Link to="/cart">Cart {cartItems.length}</Link></li>
                 {isLoggedIn ? (
                     <li
                         className="nav-item signOut-btn"
