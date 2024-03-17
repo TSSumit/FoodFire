@@ -71,14 +71,20 @@ const RestaurantMenuCard = ({ menueItem }) => {
                     {imageId && (
                         <img id='menue_img' src={imageUrl} onError={(e) => { e.target.style.display = 'none'; }} />
                     )}
-                    {imageId ? (
-                        inStock > 0 ? (
-                        <button className="menue-button" id='menue_add_card' style={{ bottom: '-30px' }} onClick={handleAddItem}>Add</button>
+                    {inStock > 0  ? (
+                            imageId? (
+                                <button className="menue-button" id='menue_add_card' style={{ bottom: '-30px' }} onClick={handleAddItem}>Add</button>
+                            ) : 
+                            (
+                                <button className='menue-button' id='menue_add_card' style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',padding:'5px', fontSize:"0.8rem" }} onClick={handleAddItem}>Add</button>
+                            )
                         ) : (
-                        <button className='menue-button' id='menue_unavailability' style={{ bottom: '-30px' }} onClick={handleAddItem}>Not available</button>
+                        imageId? (
+                            <button className='menue-button' id='menue_unavailability' style={{ bottom: '-30px' }} onClick={handleAddItem}>Not available</button>
+                        ) : 
+                        (
+                            <button className='menue-button' id='menue_unavailability' style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',padding:'5px', fontSize:"0.8rem" }} onClick={handleAddItem}>Not available</button>
                         )
-                    ) : (
-                        <button className='menue-button' id='menue_unavailability' style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',padding:'5px', fontSize:"0.8rem" }} onClick={handleAddItem}>Add</button>
                     )}
                 </div>
 

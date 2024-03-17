@@ -8,12 +8,10 @@ const  cartSlice=createSlice({
     reducers:{
         addItem:(state, action)=>{
             state.items.push(action.payload);
-            const price=action.payload.defaultPrice;
-            if(!price){
-                price=action.payload.price;
-            }
-            if(price)state.price+=(action.payload.price);
-            console.log(action.payload.price)
+            let cprice=action.payload.defaultPrice;
+            if(!cprice)cprice=action.payload.price;
+            if(cprice)state.price+=cprice;
+            console.log(cprice)
         },
         clearCart:(state)=>{
             state.items=[];
@@ -22,11 +20,10 @@ const  cartSlice=createSlice({
         
         removeItem: (state, action) => {
             const index = action.payload;
-            const removedItemPrice = state.items[index].price;
-            if(!removedItemPrice)removedItemPrice=state.items[index].defaultPrice;
+            let cprice =state.items[index].defaultPrice;
+            if(!cprice)cprice=state.items[index].price;
             state.items.splice(index, 1); // Remove one item at the found index
-
-            state.price -= removedItemPrice;
+            if(cprice)state.price -= cprice;
         }
         
     }

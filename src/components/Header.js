@@ -35,7 +35,7 @@ const Header=()=>{
                 {/* <li className="nav-item offer-btn"><Link to="/instamart">InstaMart</Link></li> */}
                 <li className="nav-item offer-btn"><Link to="/contact">Contact</Link></li>
                 <li className="nav-item about-btn"><Link to="/about">About</Link></li>
-                <li className="nav-item cart-btn"><Link to="/cart">Cart {cartItems.length}</Link></li>
+                <li className="nav-item cart-btn"><Link to="/cart">Cart {cartItems.length>0 && cartItems.length}</Link></li>
                 {isLoggedIn ? (
                     <li
                         className="nav-item signOut-btn"

@@ -526,3 +526,96 @@
 .hidden {
   display: none;
 }
+
+.emptyCartImg{
+  width: 271px;
+  height: 256px;
+  margin: 0;
+  display: inline-block;
+}
+.cartEmpty{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cartLinkToHome{
+  
+  border: 1px solid black;
+  margin: auto;
+  width: max-content;
+  display: flex;
+  margin-top: 15px;
+  padding: 11px 20px;
+  text-transform: uppercase;
+  background-color: #fc8019;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  font-size: 15px;
+  text-align: center;
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  transition: transform .8s cubic-bezier(.2,1,.2,1);
+}
+.cartContainer{
+  height: 410px;
+}
+.cartItems{
+  height: 250px;
+  width: 70vw;
+  min-width: fit-content;
+  margin: auto;
+  overflow-x: scroll;
+}
+.cartItems::-webkit-scrollbar {
+  background-color: transparent; 
+  width: 0px; /* Set the width of the scrollbar to 0px to hide it */
+}
+.cartClearAntTPrice{
+  width: 100vw;
+  
+  display: flex;
+  justify-content: space-around;
+}
+.cartButton{
+  border-radius: 18px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(226, 226, 231);
+  padding: 7px 12px;
+  display: inline-grid;
+  width: max-content;
+  grid-auto-flow: column;
+  gap: 8px;
+  /* box-shadow: rgba(2, 6, 12, 0.04) 0px 2px 12px; */
+  box-shadow: 1px 2px 4px rgba(0,0,0,.08);
+  transition: all 100ms ease-in 0s;
+  margin: 0.3vw;
+  margin-top: 10px;
+}
+.cartButton:hover {
+  background-color: rgb(245, 245, 245);
+  border-color: rgb(200, 200, 200);
+  box-shadow: rgba(2, 6, 12, 0.1) 0px 4px 16px;
+}
+.cartItemsSum{
+  width: 90vw;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  padding-bottom:  15px;
+  background-color: rgb(245, 245, 245);
+  border-color: rgb(200, 200, 200);
+  box-shadow: rgba(2, 6, 12, 0.1) 0px 4px 16px;
+}
+.cartItemsSum::-webkit-scrollbar {
+  background-color: transparent; 
+  height: 0px;
+}
+.cartItemsSumItem{
+  min-width: max-content;
+  padding: 6px 10px;
+}
