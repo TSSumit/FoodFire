@@ -6,7 +6,7 @@ import { UserContext } from "../utils/UserContext";
 import { useSelector } from 'react-redux';
 import store from "../utils/Storage";
 const Header=()=>{
-    const { user } = useContext(UserContext);
+    const { user } = useContext(UserContext)||{};
     console.log(user);
     const [isLoggedIn,setIsLoggedIn]=useState(true);
     const isonline=useOnline();
