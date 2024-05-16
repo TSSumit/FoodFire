@@ -16,6 +16,8 @@ import { Provider } from "react-redux";
 const About = lazy(() => import("./components/About.js"));
 import store from "./utils/Storage.js";
 const InstaMart = lazy(() => import("./components/InstaMart.js"));
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AppLayout = () => {
   return (
@@ -29,6 +31,10 @@ const AppLayout = () => {
           <Footer></Footer>
         </UserProvider>
       </div>
+      <ToastContainer
+      toastClassName="dark-toast"
+      bodyClassName="dark-toast-body"
+    />
     </Provider>
   );
 };
