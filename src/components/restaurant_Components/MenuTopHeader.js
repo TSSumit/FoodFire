@@ -1,6 +1,6 @@
 import React from 'react';
 import "./RestaurantMenusStyle.css";
-import {CDN_URL, menue_offerLogo_api_URL} from "../../utils/constants";
+import {CDN_URL, menue_offerLogo_api_URL,ITEM_IMG_CDN_URL} from "../../utils/constants";
 
 const MenuTopHeader = ({ menueItem }) => {
     const {
@@ -18,13 +18,13 @@ const MenuTopHeader = ({ menueItem }) => {
     const deliveryFees=2500;
     // console.log("the menu items are :-----   ", menueItem, id , name);
     
-    const imageUrl = `https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${cloudinaryImageId}`;
+    const imageUrl = ITEM_IMG_CDN_URL+cloudinaryImageId;
 
     return (
         <div>
             <div className="menu-top-header">
                 <img className="menu-top-header-img"
-                    src={CDN_URL+cloudinaryImageId}
+                    src={imageUrl}
                     alt={name}
                     />
                 <div id='menue_details_rating_dilivery'>

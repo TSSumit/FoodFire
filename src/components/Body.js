@@ -6,7 +6,6 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helperFunctions";
 import useRestaurants from "../utils/useRestaurants";
-import { swiggy_api_URL } from "../utils/constants";
 import useOnline from "../utils/useOnline";
 import UserOffline from "./UserOffline";
 
@@ -16,6 +15,7 @@ import UserOffline from "./UserOffline";
         const [allRestaurants,FilterRes]=useRestaurants(swiggy_api_URL);
         const [filteredRestaurants, setfilteredRestaurants]=useState(null);
         const isOnline=useOnline();
+        console.log(allRestaurants);
         
         if(!isOnline) return <UserOffline/>
         

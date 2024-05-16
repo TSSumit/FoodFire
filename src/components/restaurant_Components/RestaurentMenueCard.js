@@ -3,6 +3,7 @@ import React from 'react';
 import "./RestaurantMenusStyle.css";
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../utils/cartSlice';
+import { ITEM_IMG_CDN_URL } from '../../utils/constants';
 // import {CDN_URL} from '../../utils/constants';
 
 const RestaurantMenuCard = ({ menueItem }) => {
@@ -32,7 +33,7 @@ const RestaurantMenuCard = ({ menueItem }) => {
             alert("Sorry, this item is currently out of stock. Please try again later.");
         }        
     }
-    const imageUrl = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+imageId;
+    const imageUrl = ITEM_IMG_CDN_URL+imageId;
 
     return (
         <div id='outer_box'> 

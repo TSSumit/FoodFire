@@ -1,6 +1,8 @@
 import {STAR_URL} from "../utils/constants"
 
 const RestaurantCard= (props)=>{
+
+    console.log(props)
     return (
     <div className="restorent-card">
         <img className="card-img" src={props.imagelinek}/>

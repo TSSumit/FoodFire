@@ -2,8 +2,6 @@ import { useDispatch } from 'react-redux';
 import { addItem, removeItem } from './cartSlice';
 import { CDN_URL } from './constants';
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { addItem } from './cartSlice';
 import { useSelector } from 'react-redux';
 
 const CartItem = ({ item }) => {

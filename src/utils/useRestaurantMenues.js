@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {menue_api_URL} from "./constants";
+import { menue_api_URL } from "./constants";
 
 const useRestaurantMenues=(resId)=>{
   const [menuHeaderData, setMenuHeaderData] = useState(null);
@@ -18,10 +18,10 @@ const useRestaurantMenues=(resId)=>{
         menue_api_URL+resId
       );
       const data = await response.json();
-      console.log(data);
-      setMenuHeaderData(data?.data?.cards[0]?.card?.card?.info);
-      setOfferCardData(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.offers);
-      setCatagoryData(data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+      console.log("this is a data  -----------------  ",data);
+      setMenuHeaderData(data?.data?.cards[2]?.card?.card?.info);
+      setOfferCardData(data?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.offers);
+      setCatagoryData(data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
     } catch (error) {
       console.error("Error fetching data:", error);
       setError(error);
