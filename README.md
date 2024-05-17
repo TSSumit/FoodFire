@@ -1,4 +1,4 @@
-# foodfire [Li](https://foodfire-pi.vercel.app/)![1715961405405](image/README/ScreenShot.png)
+# foodfire [Live](https://foodfire-pi.vercel.app/)![1715961405405](image/README/ScreenShot.png)
 
 ## Table of content 📝
 
