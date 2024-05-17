@@ -18,7 +18,7 @@ export const menue_offerLogo_api_URL="https://media-assets.swiggy.com/swiggy/ima
 
 // Github - username
 export const Github_UserName = "TSSumit";
-export const Github_Repository_Name = "reactNotes";
+export const Github_Repository_Name = "foodfire";
 
 // Github API for User
 export const Github_API_User = "https://api.github.com/users/";

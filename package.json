@@ -1,5 +1,5 @@
 {
-  "name": "reactnotes",
+  "name": "foodfire",
   "version": "1.0.0",
   "description": "namaste-react",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "(https://github.com/TSSumit/reactNotes)"
+    "url": "(https://github.com/TSSumit/foodfire)"
   },
   "keywords": [
     "react"
