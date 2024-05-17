@@ -68,7 +68,7 @@ cd foodfire
 Install the required packages using npm:
 
 ```shell
-npm i
+npm install
 ```
 
 #### 4. Start the Project
